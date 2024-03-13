@@ -1,5 +1,6 @@
 using CustomerManagement.Application.Services.AdminServices;
 using CustomerManagement.Application.Services.AuthServices;
+using CustomerManagement.Application.Services.OrderServices;
 using CustomerManagement.Application.Services.PersonServices;
 using CustomerManagement.Application.Services.ProductServices;
 using CustomerManagement.Application.Services.RolePermissionServices;
@@ -22,6 +23,7 @@ namespace CustomerManagement.Application
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IRolePermissionService, RolePermissionService>();
+            services.AddScoped<IOrderService, OrderService>();
             return services;
         }
     }

@@ -23,10 +23,14 @@ namespace CustomerManagement.Application.Services.AdminServices
 
         public async Task<Admin> CreateAdmin(AdminDTO adminDTO)
         {
+            var person = await _personRepository.GetByAny(x => x.Id == adminDTO.UserId);
+            person.Permissions = person.Permissions.Union(adminDTO.AdminPermissions).ToList();
+            person.UserRole = 2;
+            var reult = await _personRepository.Update(person);
             var newAdmin = new Admin()
             {
                 UserId = adminDTO.UserId,
-                AdminPermissions = adminDTO.AdminPermissions,
+                AdminPermissions = person.Permissions,
                 LimitAdmin = adminDTO.LimitAdmin,
             };
             return await _adminRepository.Create(newAdmin);

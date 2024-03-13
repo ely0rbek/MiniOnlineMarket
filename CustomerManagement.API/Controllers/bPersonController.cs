@@ -3,6 +3,7 @@ using CustomerManagement.API.ExternalServices;
 using CustomerManagement.Application.Services.PersonServices;
 using CustomerManagement.Domain.Entities.DTOs;
 using CustomerManagement.Domain.Entities.Enums;
+using CustomerManagement.Domain.Entities.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,11 @@ namespace CustomerManagement.API.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize]
-    public class PersonController : Controller
+    public class bPersonController : Controller
     {
         private readonly IPersonService _personService;
 
-        public PersonController(IPersonService personService)
+        public bPersonController(IPersonService personService)
         {
             _personService = personService;
         }
@@ -29,9 +30,9 @@ namespace CustomerManagement.API.Controllers
 
         [HttpGet]
         [IdentityFilter(Permissions.GetPersonById)]
-        public async Task<IActionResult> GetPersonById(int id)
+        public async Task<Person> GetPersonById(int id)
         {
-            return Ok(await _personService.GetPersonById(id));
+            return await _personService.GetPersonById(id);
         }
 
         [HttpGet]

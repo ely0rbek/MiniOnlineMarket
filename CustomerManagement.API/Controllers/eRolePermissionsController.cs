@@ -11,11 +11,11 @@ namespace CustomerManagement.API.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize]
-    public class RolePermissionsController : Controller
+    public class eRolePermissionsController : Controller
     {
         private readonly IRolePermissionService _rolePermissionService;
 
-        public RolePermissionsController(IRolePermissionService rolePermissionService)
+        public eRolePermissionsController(IRolePermissionService rolePermissionService)
         {
             _rolePermissionService = rolePermissionService;
         }

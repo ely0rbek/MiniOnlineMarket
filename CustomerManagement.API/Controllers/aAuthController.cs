@@ -8,11 +8,11 @@ namespace CustomerManagement.API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AuthController : Controller
+    public class aAuthController : Controller
     {
         private readonly IAuthService _authService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        public AuthController(IAuthService authService, IWebHostEnvironment webHostEnvironment)
+        public aAuthController(IAuthService authService, IWebHostEnvironment webHostEnvironment)
         {
             _authService = authService;
             _webHostEnvironment = webHostEnvironment;

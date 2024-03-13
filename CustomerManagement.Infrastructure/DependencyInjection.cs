@@ -1,6 +1,7 @@
 using CustomerManagement.Infrastructure.Persistance;
 using CustomerManagement.Infrastructure.Repositories.AdminRepositories;
 using CustomerManagement.Infrastructure.Repositories.BaseRepositories;
+using CustomerManagement.Infrastructure.Repositories.OrderRepositories;
 using CustomerManagement.Infrastructure.Repositories.PersonRepositories;
 using CustomerManagement.Infrastructure.Repositories.ProductRepositories;
 using CustomerManagement.Infrastructure.Repositories.RolePermissionsRepositories;
@@ -23,6 +24,7 @@ namespace CustomerManagement.Infrastructure
             services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IRolePermissionRepository, RolePermissionRepository>();
+            services.AddScoped<IOrderRepository,OrderRepository>();
             return services;
         }
     }

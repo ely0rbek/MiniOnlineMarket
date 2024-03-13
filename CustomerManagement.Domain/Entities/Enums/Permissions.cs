@@ -27,10 +27,16 @@ namespace CustomerManagement.Domain.Entities.Enums
         UpdateAdminByAdminId=15,
         DeleteAdminByAdminId=16,
 
-        CreateRolePermission,
-        GetAllRolePermissions,
-        GetRolePermissionById,
-        UpdateRolePermissionById,
-        DeleteRolePermissionById
+        CreateRolePermission=17,
+        GetAllRolePermissions=18,
+        GetRolePermissionById=19,
+        UpdateRolePermissionById=20,
+        DeleteRolePermissionById=21,
+
+        CreateOrder=22,
+        GetAllOrders=23,
+        GetOrderByName=24,
+        UpdateOrderById=25,
+        DeleteOrderById=26,
     }
 }

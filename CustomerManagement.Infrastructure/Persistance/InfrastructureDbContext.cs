@@ -17,5 +17,7 @@ namespace CustomerManagement.Infrastructure.Persistance
         public virtual DbSet<Product> Products { get; set; }
 
         public virtual DbSet<Admin> Admins { get; set; }
+
+        public virtual DbSet<Order> Orders { get; set; }
     }
 }

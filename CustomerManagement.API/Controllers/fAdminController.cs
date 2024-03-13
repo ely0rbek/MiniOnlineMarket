@@ -12,11 +12,11 @@ namespace CustomerManagement.API.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize]
-    public class AdminController : Controller
+    public class fAdminController : Controller
     {
         private readonly IAdminService _adminService;
 
-        public AdminController(IAdminService adminService)
+        public fAdminController(IAdminService adminService)
         {
             _adminService = adminService;
         }
